@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>🔪 Freddy CRUDer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+
+    /*
+
+    Global
+
+    */
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, "Open Sans", BlinkMacSystemFont, -apple-system, "Segoe UI", "Ubuntu", "Roboto", "Oxygen", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+      font-size: inherit;
+      line-height: inherit;
+    }
+
+    html {
+      font-size: 62.5%;
+    }
+
+    body {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      font-size: 2rem;
+      line-height: 1.5;
+      color: rgba(255, 255, 255, .9);
+      min-height: 100vh;
+      display: grid;
+      grid-template-rows: 5rem auto 5rem;
+    }
+
+    /*
+
+    Header
+
+    */
+
+    header {
+      background-color: #e91e63;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    /*
+
+    Main
+
+    */
+    
+    main {
+      background-color: #EFEFEF;
+      color: rgba(0, 0, 0, .85);
+
+      display: grid;
+      grid-gap: 2rem;
+      padding: 2rem;
+    }
+
+    @media (max-width: 767px) {
+      main {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (min-width: 768px) {
+      main {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    main > form {
+      background-color: #fff;
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 0 1rem rgba(0, 0, 0, .1);
+    }
+
+    main > form > * {
+      margin-bottom: 2rem;
+    }
+
+    main > form h1 {
+      text-align: center;
+    }
+
+    main > form input {
+      width: 100%;
+      padding: 1rem;
+    }
+
+    /*
+
+    Footer
+
+    */
+
+    footer {
+      background-color: #673ab7;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>🔪🔪 Freddy CRUDer</h1>
+  </header>
+
+  <main>
+
+    <!-- CREATE -->
+    <form action="traitement.php" method="post">
+      <h1><u>C</u>reate</h1>
+      <input type="text" name="nickname" required placeholder="Nickname..">
+      <input type="submit" name="create" value="Go!">
+    </form>
+  
+    <!-- READ -->
+    <form action="traitement.php" method="post">
+      <h1><u>R</u>ead</h1>
+      <input type="number" name="id" required placeholder="ID..">
+      <input type="submit" name="read" value="Go!">
+    </form>
+    
+    <!-- UPDATE -->
+    <form action="traitement.php" method="post">
+      <h1><u>U</u>pdate</h1>
+      <input type="number" name="id" required placeholder="ID..">
+      <input type="text" name="nickname" required placeholder="Nickname..">
+      <input type="submit" name="update" value="Go!">
+    </form>
+
+    <!-- DELETE -->
+    <form action="traitement.php" method="post">
+      <h1><u>D</u>elete</h1>
+      <input type="number" name="id" required placeholder="ID..">
+      <input type="submit" name="delete" value="Go!">
+    </form>
+
+  </main>
+
+  <footer>
+    <p>:)</p>
+  </footer>
+  
+</body>
+</html>
